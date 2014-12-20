@@ -1,0 +1,442 @@
+EESchema Schematic File Version 2
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:special
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:murata
+LIBS:Gajda_opto
+LIBS:muratanfe61
+LIBS:Symbols_ICs-Diskrete_RevD6
+LIBS:SymbolsSimilarEn60617-RevE4
+LIBS:SymbolsSimilarEN60617+oldDIN617-RevE7
+LIBS:laser-supply-r1-cache
+EELAYER 25 0
+EELAYER END
+$Descr USLedger 17000 11000
+encoding utf-8
+Sheet 1 1
+Title "2A Diode Laser Regulator"
+Date ""
+Rev "1"
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L +12V #PWR01
+U 1 1 54843763
+P 2800 2150
+F 0 "#PWR01" H 2800 2100 20  0001 C CNN
+F 1 "+12V" H 2800 2250 30  0000 C CNN
+F 2 "" H 2800 2150 60  0000 C CNN
+F 3 "" H 2800 2150 60  0000 C CNN
+	1    2800 2150
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR02
+U 1 1 548437DE
+P 2850 3150
+F 0 "#PWR02" H 2850 3150 30  0001 C CNN
+F 1 "GND" H 2850 3080 30  0001 C CNN
+F 2 "" H 2850 3150 60  0000 C CNN
+F 3 "" H 2850 3150 60  0000 C CNN
+	1    2850 3150
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_01X02 JP1
+U 1 1 54843928
+P 4650 2700
+F 0 "JP1" H 4650 2850 50  0000 C CNN
+F 1 "FAN" V 4750 2700 50  0000 C CNN
+F 2 "" H 4650 2700 60  0001 C CNN
+F 3 "" H 4650 2700 60  0000 C CNN
+	1    4650 2700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4450 2650 2800 2650
+Wire Wire Line
+	2800 2650 2800 2150
+Wire Wire Line
+	4450 2750 2850 2750
+Wire Wire Line
+	2850 2750 2850 3150
+Text Notes 3250 2200 0    60   ~ 0
+Fan connection
+Text Notes 2800 800  0    60   ~ 0
+Temperature sensing
+$Comp
+L THERMISTOR TH1
+U 1 1 54843AB6
+P 2950 1350
+F 0 "TH1" V 3050 1400 50  0000 C CNN
+F 1 "THERMISTOR" V 2850 1350 50  0000 C CNN
+F 2 "" H 2950 1350 60  0001 C CNN
+F 3 "" H 2950 1350 60  0000 C CNN
+	1    2950 1350
+	0    1    1    0   
+$EndComp
+$Comp
+L CONN_01X02 JP2
+U 1 1 54843BA3
+P 3800 1400
+F 0 "JP2" H 3800 1550 50  0000 C CNN
+F 1 "Arduino" V 3900 1400 50  0000 C CNN
+F 2 "" H 3800 1400 60  0001 C CNN
+F 3 "" H 3800 1400 60  0000 C CNN
+	1    3800 1400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3600 1350 3200 1350
+Wire Wire Line
+	3600 1450 3250 1450
+Wire Wire Line
+	3250 1450 3250 1550
+Wire Wire Line
+	3250 1550 2550 1550
+Wire Wire Line
+	2550 1550 2550 1350
+Wire Wire Line
+	2550 1350 2700 1350
+$Comp
+L GND #PWR03
+U 1 1 54848DA8
+P 2150 1700
+F 0 "#PWR03" H 2150 1700 30  0001 C CNN
+F 1 "GND" H 2150 1630 30  0001 C CNN
+F 2 "" H 2150 1700 60  0000 C CNN
+F 3 "" H 2150 1700 60  0000 C CNN
+	1    2150 1700
+	1    0    0    -1  
+$EndComp
+Connection ~ 2550 1450
+Wire Wire Line
+	2550 1450 2150 1450
+Wire Wire Line
+	2150 1450 2150 1700
+$Comp
+L LM317AT U1
+U 1 1 5488DD75
+P 3400 4600
+F 0 "U1" H 3200 4800 40  0000 C CNN
+F 1 "LM338T" H 3400 4800 40  0000 L CNN
+F 2 "Power_Integrations:TO-220" H 3400 4700 30  0000 C CIN
+F 3 "http://www.ti.com/lit/ds/symlink/lm138.pdf" H 3700 5000 60  0001 C CNN
+	1    3400 4600
+	1    0    0    -1  
+$EndComp
+$Comp
+L +12V #PWR04
+U 1 1 5488DDC9
+P 1850 4400
+F 0 "#PWR04" H 1850 4350 20  0001 C CNN
+F 1 "+12V" H 1850 4500 30  0000 C CNN
+F 2 "" H 1850 4400 60  0000 C CNN
+F 3 "" H 1850 4400 60  0000 C CNN
+	1    1850 4400
+	1    0    0    -1  
+$EndComp
+$Comp
+L DIP_4 SW1
+U 1 1 5488E545
+P 8000 4650
+F 0 "SW1" H 8000 4950 70  0000 C CNN
+F 1 "DIP_4" H 8000 3700 70  0000 C CNN
+F 2 "" H 8000 4650 60  0001 C CNN
+F 3 "" H 8000 4650 60  0000 C CNN
+	1    8000 4650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1850 4400 1850 4550
+Wire Wire Line
+	1850 4550 3000 4550
+$Comp
+L GND #PWR05
+U 1 1 5488F077
+P 3400 6150
+F 0 "#PWR05" H 3400 6150 30  0001 C CNN
+F 1 "GND" H 3400 6080 30  0001 C CNN
+F 2 "" H 3400 6150 60  0000 C CNN
+F 3 "" H 3400 6150 60  0000 C CNN
+	1    3400 6150
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C1
+U 1 1 5488F091
+P 2050 4900
+F 0 "C1" H 2050 5000 40  0000 L CNN
+F 1 "0.1uF" H 2056 4815 40  0000 L CNN
+F 2 "" H 2088 4750 30  0001 C CNN
+F 3 "" H 2050 4900 60  0000 C CNN
+	1    2050 4900
+	1    0    0    -1  
+$EndComp
+Connection ~ 2050 4550
+Wire Wire Line
+	2050 4550 2050 4700
+$Comp
+L LM317AT U2
+U 1 1 5488F44F
+P 5400 5450
+F 0 "U2" H 5200 5650 40  0000 C CNN
+F 1 "LM338T" H 5400 5650 40  0000 L CNN
+F 2 "Power_Integrations:TO-220" H 5400 5550 30  0000 C CIN
+F 3 "" H 5400 5450 60  0000 C CNN
+	1    5400 5450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3800 4550 4500 4550
+Wire Wire Line
+	4500 4550 4500 5400
+Wire Wire Line
+	4500 5400 5000 5400
+Connection ~ 3950 4550
+Connection ~ 4300 4550
+$Comp
+L R R1
+U 1 1 5488F5D7
+P 3950 4900
+F 0 "R1" V 4030 4900 40  0000 C CNN
+F 1 "120" V 3957 4901 40  0000 C CNN
+F 2 "" V 3880 4900 30  0001 C CNN
+F 3 "" H 3950 4900 30  0000 C CNN
+	1    3950 4900
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R2
+U 1 1 5488F6F1
+P 3400 5550
+F 0 "R2" V 3480 5550 40  0000 C CNN
+F 1 "600" V 3407 5551 40  0000 C CNN
+F 2 "" V 3330 5550 30  0001 C CNN
+F 3 "" H 3400 5550 30  0000 C CNN
+	1    3400 5550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3400 4850 3400 5300
+Connection ~ 3400 5250
+Wire Wire Line
+	3950 5150 3950 5250
+Wire Wire Line
+	3950 5250 3400 5250
+Wire Wire Line
+	3950 4550 3950 4650
+Wire Wire Line
+	3400 5800 3400 6150
+Connection ~ 3400 5850
+$Comp
+L R R3
+U 1 1 5488F885
+P 6200 5400
+F 0 "R3" V 6280 5400 40  0000 C CNN
+F 1 "0.33" V 6207 5401 40  0000 C CNN
+F 2 "" V 6130 5400 30  0001 C CNN
+F 3 "" H 6200 5400 30  0000 C CNN
+	1    6200 5400
+	0    1    1    0   
+$EndComp
+$Comp
+L C C3
+U 1 1 5488F913
+P 4800 5750
+F 0 "C3" H 4800 5850 40  0000 L CNN
+F 1 "0.1uF" H 4806 5665 40  0000 L CNN
+F 2 "" H 4838 5600 30  0001 C CNN
+F 3 "" H 4800 5750 60  0000 C CNN
+	1    4800 5750
+	1    0    0    -1  
+$EndComp
+Connection ~ 4800 5400
+$Comp
+L CONN_01X02 P1
+U 1 1 5488FFE8
+P 10200 5950
+F 0 "P1" H 10200 6100 50  0000 C CNN
+F 1 "LASER" V 10300 5950 50  0000 C CNN
+F 2 "" H 10200 5950 60  0001 C CNN
+F 3 "" H 10200 5950 60  0000 C CNN
+	1    10200 5950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2050 5100 2050 5850
+Wire Wire Line
+	2050 5850 4400 5850
+Wire Wire Line
+	4400 5850 4400 6850
+Wire Wire Line
+	4400 6850 7100 6850
+Wire Wire Line
+	7100 6850 7100 6000
+Wire Wire Line
+	7100 6000 10000 6000
+Connection ~ 4800 6850
+Wire Wire Line
+	4800 5400 4800 5550
+Wire Wire Line
+	4800 5950 4800 6850
+Connection ~ 4300 5850
+$Comp
+L CP2 C2
+U 1 1 548918E1
+P 4300 5350
+F 0 "C2" H 4300 5450 40  0000 L CNN
+F 1 "1uF" H 4306 5265 40  0000 L CNN
+F 2 "" H 4338 5200 30  0001 C CNN
+F 3 "" H 4300 5350 60  0000 C CNN
+	1    4300 5350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4300 4550 4300 5150
+Wire Wire Line
+	4300 5550 4300 5850
+Wire Wire Line
+	5800 5400 5950 5400
+Wire Wire Line
+	9500 4650 9500 5800
+Wire Wire Line
+	5400 5800 9750 5800
+Wire Wire Line
+	9750 5800 9750 5900
+Wire Wire Line
+	9750 5900 10000 5900
+Connection ~ 9500 5800
+Wire Wire Line
+	5400 5700 5400 5800
+$Comp
+L R R4
+U 1 1 548A0A97
+P 6700 5400
+F 0 "R4" V 6780 5400 40  0000 C CNN
+F 1 "0.33" V 6707 5401 40  0000 C CNN
+F 2 "" V 6630 5400 30  0001 C CNN
+F 3 "" H 6700 5400 30  0000 C CNN
+	1    6700 5400
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	6950 5400 7400 5400
+Connection ~ 7150 5400
+Wire Wire Line
+	7150 4650 7150 5400
+Wire Wire Line
+	7150 4650 7400 4650
+Connection ~ 7150 4900
+Connection ~ 7150 5150
+Wire Wire Line
+	7150 4900 7400 4900
+Wire Wire Line
+	7150 5150 7400 5150
+$Comp
+L R R5
+U 1 1 548A216F
+P 8850 4650
+F 0 "R5" V 8930 4650 40  0000 C CNN
+F 1 "0.15" V 8857 4651 40  0000 C CNN
+F 2 "" V 8780 4650 30  0001 C CNN
+F 3 "" H 8850 4650 30  0000 C CNN
+	1    8850 4650
+	0    1    1    0   
+$EndComp
+$Comp
+L R R6
+U 1 1 548A21C4
+P 8850 4900
+F 0 "R6" V 8930 4900 40  0000 C CNN
+F 1 "0.75" V 8857 4901 40  0000 C CNN
+F 2 "" V 8780 4900 30  0001 C CNN
+F 3 "" H 8850 4900 30  0000 C CNN
+	1    8850 4900
+	0    1    1    0   
+$EndComp
+$Comp
+L R R7
+U 1 1 548A228C
+P 8850 5150
+F 0 "R7" V 8930 5150 40  0000 C CNN
+F 1 "0.75" V 8857 5151 40  0000 C CNN
+F 2 "" V 8780 5150 30  0001 C CNN
+F 3 "" H 8850 5150 30  0000 C CNN
+	1    8850 5150
+	0    1    1    0   
+$EndComp
+$Comp
+L R R8
+U 1 1 548A22ED
+P 8850 5400
+F 0 "R8" V 8930 5400 40  0000 C CNN
+F 1 "22" V 8857 5401 40  0000 C CNN
+F 2 "" V 8780 5400 30  0001 C CNN
+F 3 "" H 8850 5400 30  0000 C CNN
+	1    8850 5400
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	9100 4650 9500 4650
+Connection ~ 9500 5400
+Connection ~ 9500 5150
+Connection ~ 9500 4900
+Wire Wire Line
+	9100 4900 9500 4900
+Wire Wire Line
+	9100 5150 9500 5150
+Wire Wire Line
+	9100 5400 9500 5400
+Wire Notes Line
+	7000 1000 7000 4150
+Wire Notes Line
+	7000 4150 9550 4150
+Wire Notes Line
+	9550 4150 9550 1000
+Wire Notes Line
+	9550 1000 7000 1000
+Text Notes 7250 4000 0    60   ~ 0
+DIP switch settings\n0001 = A off, B off, C off, D ON\n\nSetting 	Resistance	Current\n0000			0.66							1.875A\n0001			22.66						0.05A\n0010			1.41							0.88A\n0011			1.392						0.89A\n0100			1.416						0.882A\n0101			2.646						0.472A\n0110			1.116						1.119A\n0111			2.108						0.593A\n1000			0.817						1.53A\n1001			0.816						1.532A\n1010			0.792						1.579A\n1011			0.775						1.613A\n1100			0.774						1.615A\n1101			0.962						1.299A\n1110			0.732						1.708A *\n1111			0.882						1.418A\n\n* recommended maximum safe setting \n	to avoid damage to diode laser
+Text Notes 2100 7050 0    60   ~ 0
+Vref = 1.25\nR1 = 120, R2 = 600\nVout = 7.53\n\nAllowing 1.5V to 2.5V voltage drop for U2,\nmeasure output at 4.5 - 5.5V across all\ncurrent settings
+Wire Notes Line
+	1950 6350 4150 6350
+Wire Notes Line
+	4150 6350 4150 7900
+Wire Notes Line
+	4150 7900 1950 7900
+Wire Notes Line
+	1950 7900 1950 6350
+$EndSCHEMATC

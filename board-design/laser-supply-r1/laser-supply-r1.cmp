@@ -1,0 +1,129 @@
+Cmp-Mod V01 Created by Cvpcb (2014-12-04 BZR 5312)-product   date = Thu 11 Dec 2014 01:53:25 PM PST
+
+BeginCmp
+TimeStamp = /5488F091;
+Reference = C1;
+ValeurCmp = 0.1uF;
+IdModule  = ;
+EndCmp
+
+BeginCmp
+TimeStamp = /548918E1;
+Reference = C2;
+ValeurCmp = 1uF;
+IdModule  = ;
+EndCmp
+
+BeginCmp
+TimeStamp = /5488F913;
+Reference = C3;
+ValeurCmp = 0.1uF;
+IdModule  = ;
+EndCmp
+
+BeginCmp
+TimeStamp = /54843928;
+Reference = JP1;
+ValeurCmp = FAN;
+IdModule  = ;
+EndCmp
+
+BeginCmp
+TimeStamp = /54843BA3;
+Reference = JP2;
+ValeurCmp = Arduino;
+IdModule  = ;
+EndCmp
+
+BeginCmp
+TimeStamp = /5488FFE8;
+Reference = P1;
+ValeurCmp = LASER;
+IdModule  = ;
+EndCmp
+
+BeginCmp
+TimeStamp = /5488F5D7;
+Reference = R1;
+ValeurCmp = 120;
+IdModule  = ;
+EndCmp
+
+BeginCmp
+TimeStamp = /5488F6F1;
+Reference = R2;
+ValeurCmp = 600;
+IdModule  = ;
+EndCmp
+
+BeginCmp
+TimeStamp = /5488F885;
+Reference = R3;
+ValeurCmp = 0.33;
+IdModule  = ;
+EndCmp
+
+BeginCmp
+TimeStamp = /548A0A97;
+Reference = R4;
+ValeurCmp = 0.33;
+IdModule  = ;
+EndCmp
+
+BeginCmp
+TimeStamp = /548A216F;
+Reference = R5;
+ValeurCmp = 0.15;
+IdModule  = ;
+EndCmp
+
+BeginCmp
+TimeStamp = /548A21C4;
+Reference = R6;
+ValeurCmp = 0.75;
+IdModule  = ;
+EndCmp
+
+BeginCmp
+TimeStamp = /548A228C;
+Reference = R7;
+ValeurCmp = 0.75;
+IdModule  = ;
+EndCmp
+
+BeginCmp
+TimeStamp = /548A22ED;
+Reference = R8;
+ValeurCmp = 22;
+IdModule  = ;
+EndCmp
+
+BeginCmp
+TimeStamp = /5488E545;
+Reference = SW1;
+ValeurCmp = DIP_4;
+IdModule  = ;
+EndCmp
+
+BeginCmp
+TimeStamp = /54843AB6;
+Reference = TH1;
+ValeurCmp = THERMISTOR;
+IdModule  = ;
+EndCmp
+
+BeginCmp
+TimeStamp = /5488DD75;
+Reference = U1;
+ValeurCmp = LM338T;
+IdModule  = Power_Integrations:TO-220;
+EndCmp
+
+BeginCmp
+TimeStamp = /5488F44F;
+Reference = U2;
+ValeurCmp = LM338T;
+IdModule  = Power_Integrations:TO-220;
+EndCmp
+
+EndListe
